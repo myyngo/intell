@@ -1,0 +1,240 @@
+/* Tinos font classes */
+.tinos-regular {
+	font-family: "Tinos", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.tinos-bold {
+	font-family: "Tinos", serif;
+	font-weight: 700;
+	font-style: normal;
+}
+.tinos-regular-italic {
+	font-family: "Tinos", serif;
+	font-weight: 400;
+	font-style: italic;
+}
+.tinos-bold-italic {
+	font-family: "Tinos", serif;
+	font-weight: 700;
+	font-style: italic;
+}
+/* Scope One font class */
+.scope-one-regular {
+	font-family: "Scope One", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+/* DM Serif Text font classes */
+.dm-serif-text-regular {
+	font-family: "DM Serif Text", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+.dm-serif-text-regular-italic {
+	font-family: "DM Serif Text", serif;
+	font-weight: 400;
+	font-style: italic;
+}
+/* Use Bitcount Single font for the main headline */
+.bitcount-single-headline {
+	font-family: "Bitcount Single", system-ui;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-variation-settings:
+		"slnt" 0,
+		"CRSV" 0.5,
+		"ELSH" 0,
+		"ELXP" 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #f4f4f4;
+}
+
+/* Hero Section Styles */
+.hero {
+	background: linear-gradient(135deg, #0071c5 0%, #00aaff 100%);
+	color: #fff;
+	text-align: center;
+	padding: 50px 20px 35px 20px;
+	position: relative;
+}
+.intel-logo {
+	display: block;
+	margin: 0 auto 24px auto;
+	max-width: 160px;
+	height: auto;
+}
+.hero-headline {
+	font-size: 2.5em;
+	font-weight: bold;
+	margin: 0 0 12px 0;
+	letter-spacing: 1px;
+	text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.hero-subheading {
+	font-size: 1.2em;
+	margin: 0;
+	font-weight: 500;
+	opacity: 0.95;
+}
+
+/* Timeline Helper Text */
+.timeline-helper {
+	text-align: center;
+	font-size: 1em;
+	color: #0071c5;
+	margin-bottom: 12px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+
+/* Timeline Container */
+.timeline-container {
+	padding: 32px 0 32px 0;
+	background: #f8fbff;
+}
+
+/* Timeline Styles */
+.timeline {
+	display: flex;
+	flex-direction: row;
+	gap: 32px;
+	overflow-x: auto;
+	padding: 16px 0;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Flip Card Styles */
+.flip-card {
+	background: transparent;
+	width: 260px;
+	height: 340px;
+	perspective: 1000px;
+	flex: 0 0 auto;
+	scroll-snap-align: start;
+}
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.7s cubic-bezier(.25,.8,.25,1);
+	transform-style: preserve-3d;
+	box-shadow: 0 6px 24px rgba(0,113,197,0.12), 0 1.5px 8px rgba(0,0,0,0.08);
+	border-radius: 16px;
+}
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+	transform: rotateY(180deg);
+	box-shadow: 0 12px 32px rgba(0,113,197,0.18), 0 3px 16px rgba(0,0,0,0.12);
+}
+.flip-card-front, .flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.flip-card-front {
+	padding: 0;
+	overflow: hidden;
+}
+
+/* Make the stock photo fill the card front */
+.card-stock-photo {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 16px 16px 0 0;
+	flex-shrink: 0;
+	display: block;
+}
+
+/* Place milestone text over the image */
+.milestone-year, .milestone-title {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.milestone-year {
+	top: 18px;
+	color: #fff;
+}
+.milestone-title {
+	top: 54px;
+	color: #fff;
+}
+.flip-card-front {
+	background: #e3f2fd; /* light blue, lighter than the blue/teal */
+	box-shadow: 0 2px 8px rgba(0,113,197,0.08);
+	z-index: 2;
+	transition: box-shadow 0.3s;
+}
+.flip-card-back {
+	background: linear-gradient(135deg, #0071c5 0%, #00aaff 100%);
+	color: #fff;
+	transform: rotateY(180deg);
+	box-shadow: 0 2px 8px rgba(0,113,197,0.08);
+	font-size: 1.08em;
+	text-align: center;
+	z-index: 1;
+}
+.milestone-year {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #0071c5;
+	margin-bottom: 8px;
+}
+.milestone-title {
+	font-size: 1.1em;
+	font-weight: 600;
+	margin-bottom: 12px;
+	color: #222;
+	text-align: center;
+}
+.flip-card-front img {
+	max-width: 120px;
+	max-height: 120px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	box-shadow: 0 1px 6px rgba(0,113,197,0.10);
+}
+
+/* Responsive Layout */
+@media (max-width: 767px) {
+	.timeline {
+		flex-direction: column;
+		overflow-x: visible;
+		gap: 24px;
+		scroll-snap-type: none;
+	}
+	.flip-card {
+		width: 100%;
+		max-width: 340px;
+		margin: 0 auto;
+	}
+}
+
+/* Subtle hover/tap effects for premium feel */
+.flip-card-inner {
+	box-shadow: 0 6px 24px rgba(0,113,197,0.12), 0 1.5px 8px rgba(0,0,0,0.08);
+	transition: transform 0.7s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+}
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+	box-shadow: 0 12px 32px rgba(0,113,197,0.18), 0 3px 16px rgba(0,0,0,0.12);
+}
