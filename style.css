@@ -56,6 +56,27 @@ body {
 	background: #f4f4f4;
 }
 
+/* Skip to Main Content Link - Accessibility Feature */
+.skip-to-main {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: #0071c5;
+	color: white;
+	padding: 8px 16px;
+	text-decoration: none;
+	font-weight: bold;
+	z-index: 100;
+	border-radius: 0 0 4px 0;
+}
+
+/* Show skip link on focus */
+.skip-to-main:focus {
+	top: 0;
+	outline: 3px solid #fff;
+	outline-offset: 2px;
+}
+
 /* Hero Section Styles */
 .hero {
 	background: linear-gradient(135deg, #0071c5 0%, #00aaff 100%);
@@ -162,13 +183,14 @@ body {
 	display: block;
 }
 
-/* Place milestone text over the image */
+/* Place milestone text over the image - centered */
 .milestone-year, .milestone-title {
 	position: absolute;
 	left: 0;
 	width: 100%;
 	z-index: 2;
 	text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+	text-align: center;
 }
 .milestone-year {
 	top: 18px;
@@ -229,7 +251,6 @@ body {
 	}
 }
 
-/* Subtle hover/tap effects for premium feel */
 .flip-card-inner {
 	box-shadow: 0 6px 24px rgba(0,113,197,0.12), 0 1.5px 8px rgba(0,0,0,0.08);
 	transition: transform 0.7s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
@@ -237,4 +258,379 @@ body {
 .flip-card:hover .flip-card-inner,
 .flip-card.flipped .flip-card-inner {
 	box-shadow: 0 12px 32px rgba(0,113,197,0.18), 0 3px 16px rgba(0,0,0,0.12);
+}
+
+/* Three-Column Section Styles */
+.hover-card {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	border: none;
+	border-radius: 12px;
+}
+
+/* Hover effect for cards - accessible animation */
+.hover-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 24px rgba(0, 113, 197, 0.15) !important;
+}
+
+/* Icon wrapper for consistent spacing */
+.icon-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+/* Learn More link styling */
+.learn-more-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: #0071c5;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+	padding: 8px 0;
+}
+
+/* Hover state for Learn More links - high contrast */
+.learn-more-link:hover {
+	color: #005a9e;
+	gap: 12px;
+	text-decoration: underline;
+}
+
+/* Focus state for accessibility */
+.learn-more-link:focus {
+	outline: 2px solid #0071c5;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+/* Active state */
+.learn-more-link:active {
+	color: #004578;
+}
+
+/* Arrow icon animation on hover */
+.learn-more-link:hover .bi-arrow-right {
+	transform: translateX(4px);
+	transition: transform 0.3s ease;
+}
+
+/* Newsletter Section Styles */
+.newsletter-section {
+	background: linear-gradient(135deg, #f8fbff 0%, #e3f2fd 100%);
+}
+
+.newsletter-card {
+	background: #ffffff;
+	border-radius: 16px;
+	border: 1px solid #e0e0e0;
+}
+
+/* Form styling for better accessibility */
+.form-label {
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 8px;
+}
+
+.form-control:focus {
+	border-color: #0071c5;
+	box-shadow: 0 0 0 0.25rem rgba(0, 113, 197, 0.25);
+}
+
+/* Button styling */
+.btn-primary {
+	background-color: #0071c5;
+	border-color: #0071c5;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+	background-color: #005a9e;
+	border-color: #005a9e;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 113, 197, 0.3);
+}
+
+.btn-primary:focus {
+	background-color: #005a9e;
+	border-color: #005a9e;
+	box-shadow: 0 0 0 0.25rem rgba(0, 113, 197, 0.5);
+}
+
+/* Footer Styles */
+.footer {
+	background-color: #1a1a1a !important;
+	color: #f4f4f4;
+	border-top: 3px solid #0071c5;
+}
+
+/* Footer link styling with high contrast */
+.footer-link {
+	color: #ffffff;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	padding: 4px 8px;
+}
+
+.footer-link:hover {
+	color: #00aaff;
+	text-decoration: underline;
+}
+
+.footer-link:focus {
+	outline: 2px solid #00aaff;
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+/* RTL Support - automatically applied when dir="rtl" */
+/* Timeline section uses its own RTL handling - these styles are for NEW sections only */
+
+/* RTL: Three-Column Section */
+.is-rtl .row {
+	direction: rtl;
+}
+
+.is-rtl .card-body {
+	text-align: right;
+}
+
+.is-rtl .icon-wrapper {
+	justify-content: flex-start; /* Icons stay on right in RTL */
+}
+
+.is-rtl .learn-more-link {
+	flex-direction: row-reverse;
+}
+
+.is-rtl .learn-more-link .bi-arrow-right {
+	transform: scaleX(-1); /* Flip arrow for RTL */
+}
+
+/* RTL: Newsletter Form */
+.is-rtl .newsletter-card {
+	text-align: right;
+}
+
+.is-rtl .form-label {
+	text-align: right;
+}
+
+.is-rtl .form-check {
+	padding-right: 1.5em;
+	padding-left: 0;
+}
+
+.is-rtl .form-check-input {
+	float: right;
+	margin-right: -1.5em;
+	margin-left: 0;
+}
+
+/* RTL: Footer */
+.is-rtl .footer .list-inline {
+	direction: rtl;
+}
+
+.is-rtl .footer .text-md-end {
+	text-align: right !important;
+}
+
+.is-rtl .footer .text-md-start {
+	text-align: left !important;
+}
+
+/* RTL: Modals */
+.is-rtl .modal-content {
+	text-align: right;
+}
+
+.is-rtl .modal-header .btn-close {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+.is-rtl .modal-body ul {
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+.is-rtl .accordion-button::after {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+.is-rtl .bi-arrow-right,
+.is-rtl .bi-box-arrow-up-right {
+	transform: scaleX(-1);
+}
+
+/* Language Switcher positioning for RTL */
+.is-rtl .language-switcher {
+	right: auto;
+	left: 20px;
+}
+
+/* Existing RTL styles for timeline (kept for compatibility) */
+[dir="rtl"] .timeline {
+	direction: rtl;
+}
+
+[dir="rtl"] .learn-more-link {
+	flex-direction: row-reverse;
+}
+
+[dir="rtl"] .icon-wrapper {
+	justify-content: flex-end;
+}
+
+/* High contrast mode support for accessibility */
+@media (prefers-contrast: high) {
+	.learn-more-link {
+		font-weight: 700;
+	}
+	
+	.btn-primary {
+		border: 2px solid #000;
+	}
+	
+	.footer-link {
+		text-decoration: underline;
+	}
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+	.hover-card,
+	.learn-more-link,
+	.btn-primary,
+	.flip-card-inner {
+		transition: none;
+	}
+	
+	.learn-more-link:hover .bi-arrow-right {
+		transform: none;
+	}
+}
+/* Modal Styling Enhancements */
+.modal-header {
+	border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-title {
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.modal-body {
+	padding: 2rem;
+	font-size: 1.05rem;
+	line-height: 1.7;
+}
+
+.modal-body h3,
+.modal-body h4,
+.modal-body h5 {
+	color: #333;
+}
+
+.modal-body .alert {
+	border-left: 4px solid;
+}
+
+.accordion-button:not(.collapsed) {
+	background-color: #e3f2fd;
+	color: #0071c5;
+}
+
+.accordion-button:focus {
+	box-shadow: 0 0 0 0.25rem rgba(0, 113, 197, 0.25);
+}
+
+/* Language Switcher for RTL Testing */
+.language-switcher {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+	background: white;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	min-width: 200px;
+}
+
+.language-switcher select {
+	border: 2px solid #0071c5;
+	border-radius: 4px;
+	padding: 8px 12px;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	background-color: white;
+	color: #333;
+	width: 100%;
+}
+
+.language-switcher select:focus {
+	outline: 2px solid #0071c5;
+	outline-offset: 2px;
+}
+
+.language-switcher label {
+	display: block;
+	font-weight: 600;
+	font-size: 12px;
+	color: #0071c5;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+}
+
+.language-switcher .btn {
+	width: 100%;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+}
+
+/* Hide Google Translate default toolbar */
+.goog-te-banner-frame {
+	display: none !important;
+}
+
+body {
+	top: 0 !important;
+}
+
+.goog-te-combo {
+	display: none;
+}
+
+#google_translate_element {
+	display: none !important;
+}
+
+/* Style the page when translated */
+.translated-ltr,
+.translated-rtl {
+	margin-top: 0 !important;
+}
+
+/* RTL-specific adjustments */
+[dir="rtl"] .modal-header .btn-close {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+[dir="rtl"] .accordion-button::after {
+	margin-right: auto;
+	margin-left: 0;
 }
